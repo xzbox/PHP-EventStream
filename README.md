@@ -15,7 +15,7 @@ class app extends EventStream_Server{
 		}
 	}
 	protected function connected() {
-        $this->sendToAll('joined','New user joined!');
+        $this->sendToAll('joined');
 	}
 }
 $app = new app();
