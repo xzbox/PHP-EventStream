@@ -8,6 +8,9 @@ EventStream.EventSource     = null;
 EventStream.create      = function(server){
     EventStream.server  = server;
     EventStream.EventSource = new EventSource(server);
+    EventStream.EventSource.addEventListener('error',function(e){
+        EventStream.create(EventStream.server);
+    },false);
 };
 EventStream.send    = function(message){
     var req     = new XMLHttpRequest();
