@@ -84,6 +84,30 @@ abstract class EventStream_Server{
 	}
 
 	/**
+	 * @param      $function
+	 * @param      $data
+	 * @param null $user
+	 *
+	 * @return void
+	 */
+	private function send($function,$data,$user = null){
+		if($user === null){
+			$user = $this->user;
+		}
+		$this->write_command(['s',$function,$data,$user->get_sessionId()]);
+	}
+
+	/**
+	 * @param $function
+	 * @param $data
+	 *
+	 * @return void
+	 */
+	private function sendToAll($function,$data){
+		$this->write_command(['s',$function,$data,'*']);
+	}
+
+	/**
 	 * @return mixed
 	 */
 	abstract protected function connected();
