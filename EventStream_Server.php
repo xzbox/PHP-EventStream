@@ -35,6 +35,7 @@ abstract class EventStream_Server{
 	 */
 	public function __construct() {
 		session_start();
+		header('X-Powered-By: XZBox/PHP-EventStream');
 		if($this->appName == null){
 			$this->appName  = get_class($this);
 		}
@@ -48,7 +49,6 @@ abstract class EventStream_Server{
 		}else{
 			set_time_limit(0);
 			header('Content-Type: text/event-stream');
-			header('X-Powered-By: XZBox/PHP-EventStream');
 			$this->connected();
 			$file               = file($this->appFile);
 			$this->lastCount    = count($file);
