@@ -64,7 +64,7 @@ abstract class EventStream_Server{
 						}
 					}elseif($command[0] == 's'){
 						if($command[3] == $this->user->get_sessionId() || $command[3] == '*'){
-							echo "\n\n".'event: '.$command[1].implode("\ndata: ",explode("\n",$command[2]));
+							echo 'event: '.$command[1].implode("\ndata: ",explode("\n",$command[2]))."\n\n";
 						}
 					}
 				}
