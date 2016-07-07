@@ -49,6 +49,8 @@ abstract class EventStream_Server{
 		}else{
 			set_time_limit(0);
 			header('Content-Type: text/event-stream');
+			header("Cache-Control: no-cache");
+			header("Connection: keep-alive");
 			$this->connected();
 			$file               = file($this->appFile);
 			$this->lastCount    = count($file);
