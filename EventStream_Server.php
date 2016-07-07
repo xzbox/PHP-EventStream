@@ -92,7 +92,7 @@ abstract class EventStream_Server{
 	 *
 	 * @return void
 	 */
-	private function send($function,$data,$user = null){
+	private function send($function,$data = '',$user = null){
 		if($user === null){
 			$user = $this->user;
 		}
@@ -105,7 +105,7 @@ abstract class EventStream_Server{
 	 *
 	 * @return void
 	 */
-	private function sendToAll($function,$data){
+	private function sendToAll($function,$data = ''){
 		$this->write_command(['s',$function,$data,'*']);
 	}
 
