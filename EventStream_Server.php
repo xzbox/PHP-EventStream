@@ -70,6 +70,7 @@ abstract class EventStream_Server{
 						}
 					}
 				}
+				sleep(0.3);
 			}
 		}
 	}
