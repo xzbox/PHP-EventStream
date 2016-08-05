@@ -1,6 +1,6 @@
 <?php
 /**
- * @author QTI3E
+ * @author QTIƎE
  * @license MIT
  */
 include 'EventStream_Client.php';

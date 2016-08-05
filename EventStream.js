@@ -1,5 +1,5 @@
 /**
- * @author QTI3E
+ * @author QTIƎE
  * @license MIT
  */
 var EventStream             = Object();
